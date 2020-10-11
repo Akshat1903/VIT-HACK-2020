@@ -1,0 +1,46 @@
+,patientId,reportedOn,ageEstimate,gender,state,status
+72,72,12/03/2020,20.0,female,Delhi,Deceased
+76,77,12/03/2020,26.0,male,Maharashtra,Deceased
+81,74,13/03/2020,34.0,male,Karnataka,Deceased
+181,182,19/03/2020,57.0,male,Punjab,Deceased
+269,270,21/03/2020,26.0,male,Maharashtra,Deceased
+293,294,21/03/2020,40.0,male,Gujarat,Deceased
+326,327,21/03/2020,57.0,male,West Bengal,Deceased
+347,348,22/03/2020,26.0,male,Bihar,Deceased
+379,380,22/03/2020,24.0,male,Kerala,Deceased
+430,430,23/03/2020,1.0,female,Gujarat,Deceased
+478,487,23/03/2020,76.0,male,Himachal Pradesh,Deceased
+493,502,23/03/2020,21.0,male,Tamil Nadu,Deceased
+530,531,24/03/2020,68.0,male,Jammu and Kashmir,Deceased
+576,577,25/03/2020,24.0,female,Madhya Pradesh,Deceased
+688,690,26/03/2020,35.0,female,Karnataka,Deceased
+724,726,26/03/2020,34.0,,Rajasthan,Deceased
+746,747,27/03/2020,31.0,male,Madhya Pradesh,Deceased
+757,758,27/03/2020,48.0,male,Karnataka,Deceased
+945,946,28/03/2020,65.0,male,Telangana,Deceased
+1006,1012,28/03/2020,48.0,female,West Bengal,Deceased
+1073,1074,29/03/2020,41.0,male,Kerala,Deceased
+1165,1166,30/03/2020,47.0,female,Gujarat,Deceased
+1384,1385,31/03/2020,10.0,female,West Bengal,Deceased
+2060,2061,02/04/2020,67.0,male,Maharashtra,Deceased
+2586,2587,03/04/2020,41.6729435060487,male,Karnataka,Deceased
+3019,3020,03/04/2020,37.47670154460279,male,Maharashtra,Deceased
+3020,3021,03/04/2020,41.28921866695553,male,Maharashtra,Deceased
+3021,3022,03/04/2020,41.288943197466075,female,Maharashtra,Deceased
+3189,3190,04/04/2020,41.61469750189513,male,Maharashtra,Deceased
+3190,3191,04/04/2020,41.61442203240568,male,Maharashtra,Deceased
+3488,3489,04/04/2020,40.08806894506902,female,Punjab,Deceased
+3768,3762,05/04/2020,42.43859178244931,male,Maharashtra,Deceased
+4144,4146,05/04/2020,39.88367058389888,,Uttar Pradesh,Deceased
+4242,4244,05/04/2020,42.66121874613411,male,Gujarat,Deceased
+4860,4861,07/04/2020,41.86457709302103,female,Karnataka,Deceased
+4905,4906,07/04/2020,38.6092908116344,male,Odisha,Deceased
+4932,4933,07/04/2020,42.73338177960567,male,Kerala,Deceased
+5384,5385,08/04/2020,40.91417859022983,male,Karnataka,Deceased
+6266,6267,09/04/2020,40.62713938222541,male,Karnataka,Deceased
+6832,6833,10/04/2020,40.456348298767885,male,Karnataka,Deceased
+8323,8324,11/04/2020,38.60907325622474,female,Maharashtra,Deceased
+11680,11681,15/04/2020,40.6068777563983,male,Maharashtra,Deceased
+11762,11763,15/04/2020,40.155819237374025,female,Karnataka,Deceased
+14715,14715,18/04/2020,38.11887252079877,male,Karnataka,Deceased
+16136,16136,19/04/2020,39.242152667490465,female,Karnataka,Deceased
