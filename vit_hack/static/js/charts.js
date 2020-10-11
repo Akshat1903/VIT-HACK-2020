@@ -4,6 +4,7 @@ document.getElementById("to_date").min = "2020-01-30";
 async function getUsers() {
     let url = 'http://127.0.0.1:8000/api/charts_api';
     let state = $("#state").val();
+    let data = $("#data").val();
     let gender = $("#gender").val();
     let age = $("#age").val();
     let from_date = $("#from_date").val();
@@ -12,6 +13,7 @@ async function getUsers() {
         method: "POST",
         body: JSON.stringify({
             "state": state,
+            "data": data,
             "age": age,
             "gender": gender,
             "from_date": from_date,
@@ -22,7 +24,7 @@ async function getUsers() {
         }
     };
     try {
-        let res = await fetch(url,options);
+        let res = await fetch(url, options);
         return await res.json();
     } catch (error) {
         console.log(error);
@@ -39,6 +41,8 @@ var lineChartData = {
     }]
 }
 
+console.log(lineChartData);
+
 async function renderUsers() {
     let users = await getUsers();
     console.log(users);
@@ -53,27 +57,32 @@ async function renderUsers() {
 
 renderUsers();
 
-$("#state").on('change',function() {
+$("#state").on('change', function() {
     renderUsers();
     lineChartDemo.destroy();
     window.setTimeout(showGraph, 2000);
 });
-$("#gender").on('change',function() {
+$("#data").on('change', function() {
     renderUsers();
     lineChartDemo.destroy();
     window.setTimeout(showGraph, 2000);
 });
-$("#age").on('change',function() {
+$("#gender").on('change', function() {
     renderUsers();
     lineChartDemo.destroy();
     window.setTimeout(showGraph, 2000);
 });
-$("#from_date").on('change',function() {
+$("#age").on('change', function() {
     renderUsers();
     lineChartDemo.destroy();
     window.setTimeout(showGraph, 2000);
 });
-$("#to_date").on('change',function() {
+$("#from_date").on('change', function() {
+    renderUsers();
+    lineChartDemo.destroy();
+    window.setTimeout(showGraph, 2000);
+});
+$("#to_date").on('change', function() {
     renderUsers();
     lineChartDemo.destroy();
     window.setTimeout(showGraph, 2000);

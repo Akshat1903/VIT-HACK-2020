@@ -42,13 +42,22 @@
      <div class="main-body">
          <div class="container">
            <div class="heading">
-             <h2>All Covid19 stats on a particular day.</h2>
+             <h2>Number of Deceased People on a particular date.</h2>
            </div>
              <div class="graphs">
                  <canvas id="canvas"></canvas>
              </div>
 
           <h2>Enter data to display graph:</h2>
+          <div class="form-group">
+            <p>Data Type:</p>
+              <select class="form-control" name="data" id="data">
+                  <option value="final_data_compiled.csv">Combined</option>
+                  <option value="final_data_deceased.csv">Deceased</option>
+                  <option value="final_data_hospitalized.csv">Hospitalized</option>
+                  <option value="final_data_recovered.csv">Recovered</option>
+              </select>
+          </div>
          <div class="form-group">
            <p>Gender:</p>
              <select class="form-control" name="gender" id="gender">
@@ -85,7 +94,7 @@
                  <option value="Punjab">Punjab</option>
                  <option value="Kerala">Kerala</option>
                  <option value="Uttar Pradesh">Uttar Pradesh</option>
-                 <option value="Maharastra">Maharastra</option>
+                 <option value="Maharashtra">Maharashtra</option>
                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                  <option value="Delhi">Delhi</option>
                  <option value="Bihar">Bihar</option>

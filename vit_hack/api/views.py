@@ -12,15 +12,9 @@ from datetime import *
 
 # Create your views here.
 
-FILENAME = './api/final_data_compiled.csv'
+FILENAME = './api/final_data_deceased.csv'
 df = pd.read_csv(FILENAME)
 df = df.fillna('')
-
-state = ''
-gender = ''
-from_date = ''
-to_date = ''
-age_groups = ''
 
 dates = list(set(df['reportedOn']))
 new_dates = []
@@ -36,8 +30,29 @@ for date_sort_2 in new_dates_2:
 	dates.append(str(d1)+'/'+str(m1)+'/'+str(y1))
 
 
-def filterprod(State, Gender, Age, From_date, To_date):
+def filterprod(Data, State, Gender, Age, From_date, To_date):
 	dt_st = []
+
+	if Data == '':
+		FILENAME = './api/final_data_compiled.csv'
+	else:
+		FILENAME = './api/' + str(Data)
+	df = pd.read_csv(FILENAME)
+	df = df.fillna('')
+
+	dates = list(set(df['reportedOn']))
+	new_dates = []
+	for date_sort in dates:
+		d1, m1, y1 = [int(x) for x in date_sort.split('/')]
+		b1 = date(y1,m1,d1)
+		new_dates.append(b1)
+	new_dates.sort()
+	new_dates_2 = [str(x) for x in new_dates]
+	dates = []
+	for date_sort_2 in new_dates_2:
+		y1, m1, d1 = [x for x in date_sort_2.split('-')]
+		dates.append(str(d1)+'/'+str(m1)+'/'+str(y1))
+
 	for date1 in dates:
 		if From_date != '':
 			y1, m1, d1 = [int(x) for x in str(From_date).split('-')]
@@ -79,9 +94,9 @@ def apiOverview(request):
 		queries = json.loads(request.body)
 		print(queries)
 		if(queries['age'] == ''):
-			new_data = filterprod(queries['state'],queries['gender'],queries['age'],queries['from_date'],queries['to_date'])
+			new_data = filterprod(queries['data'],queries['state'],queries['gender'],queries['age'],queries['from_date'],queries['to_date'])
 		else:
-			new_data = filterprod(queries['state'],queries['gender'],int(queries['age']),queries['from_date'],queries['to_date'])
+			new_data = filterprod(queries['data'],queries['state'],queries['gender'],int(queries['age']),queries['from_date'],queries['to_date'])
 		return Response(new_data)
 
 def contact_view(request):
