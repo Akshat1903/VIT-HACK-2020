@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="{% static 'css/task_1.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav>
+        <label class="logo"> <a href="{% url 'api:home_page' %}">Covinfo</a> </label>
+        <ul class="nav-links">
+            <li><a href="{% url 'api:hospitals' %}">
+                    <p>Hospitals</p>
+                </a></li>
+            <li><a href="{% url 'api:colleges' %}">
+                    <p>Medical Colleges</p>
+                </a></li>
+            <li><a href="{% url 'api:charts' %}">
+                    <p>Charts</p>
+                </a></li>
+            <li><a href="{% url 'api:contact_view' %}">
+                    <p>Contact info</p>
+                </a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <div class="main-body">
+        <div class="primary_data">
+        </div>
+        <div class="container">
+            <div class="header_wrap">
+                <div class="num_rows">
+                    <div class="form-group">
+                        <select class="form-control" name="state" id="maxRows">
+                            <option value="5000">Show ALL Rows</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="tb_search">
+                    <input type="text" id="search_input_all" onkeyup="FilterkeyWord_all_table()" placeholder="Search.." class="form-control">
+                </div>
+            </div>
+            <br>
+            <div class="table-responsive">
+                <table class="table table-striped table-class" id="table-id">
+                    <thead>
+                        <tr>
+                            <th>State</th>
+                            <th>Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table_section">
+                    <tbody>
+                </table>
+            </div>
+            <div class='pagination-container'>
+                <ul class="pagination">
+                </ul>
+            </div>
+            <div class="rows_count">Showing 11 to 20 of 91 entries</div>
+        </div>
+    </div>
+    <script src="{% static 'js/task_1.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+
+</html>

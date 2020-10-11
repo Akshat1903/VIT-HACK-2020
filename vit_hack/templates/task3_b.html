@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colleges</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/task3_b.css' %}">
+</head>
+
+<body>
+    <nav>
+        <label class="logo"> <a href="{% url 'api:home_page' %}">Covinfo</a> </label>
+        <ul class="nav-links">
+            <li><a href="{% url 'api:hospitals' %}">
+                    <p>Hospitals</p>
+                </a></li>
+            <li><a href="{% url 'api:colleges' %}">
+                    <p>Medical Colleges</p>
+                </a></li>
+            <li><a href="{% url 'api:charts' %}">
+                    <p>Charts</p>
+                </a></li>
+            <li><a href="{% url 'api:contact_view' %}">
+                    <p>Contact info</p>
+                </a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <div class="main-body">
+        <div class="container">
+            <div class="header_wrap">
+                <div class="num_rows">
+                    <div class="form-group">
+                        <select class="form-control" name="state" id="maxRows">
+                            <option value="5000">Show ALL Rows</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="tb_search">
+                    <input type="text" id="search_input_all" onkeyup="FilterkeyWord_all_table()" placeholder="Search.." class="form-control">
+                </div>
+                <div class="form-group">
+                    <select class="states form-control" name="state_options">
+                        <option value="All">All States</option>
+                        <option value="A & N Islands">A & N Islands</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Maharastra">Maharastra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="table-responsive">
+                <table class="table table-striped table-class" id="table-id">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>State</th>
+                            <th>City</th>
+                            <th>Ownership</th>
+                            <th>Admission</th>
+                            <th>Hospital Beds</th>
+                        </tr>
+                    </thead>
+                    <tbody class="cllg_section">
+                    <tbody>
+                </table>
+            </div>
+            <!-- <div class='pagination-container'>
+                <ul class="pagination">
+                </ul>
+            </div> -->
+            <div class="rows_count">Showing 11 to 20 of 91 entries</div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/task3_b.js' %}"></script>
+
+</body>
+
+</html>

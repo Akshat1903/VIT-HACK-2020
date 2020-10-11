@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covinfo</title>
+    <link rel="stylesheet" href="{% static 'css/task_2.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <label class="logo"> <a href="{% url 'api:home_page' %}">Covinfo</a> </label>
+        <ul class="nav-links">
+            <li><a href="{% url 'api:hospitals' %}">
+                    <p>Hospitals</p>
+                </a></li>
+            <li><a href="{% url 'api:colleges' %}">
+                    <p>Medical Colleges</p>
+                </a></li>
+            <li><a href="{% url 'api:charts' %}">
+                    <p>Charts</p>
+                </a></li>
+            <li><a href="{% url 'api:contact_view' %}">
+                    <p>Contact info</p>
+                </a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <div class="main-body">
+        <div class="parallax pic">
+            <div class="heading">
+                Covinfo <br>
+                All Covid-19 stats at one spot.
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="titles">
+            <p>About Covid-19</p>
+        </div>
+        <div class="about-us">
+            <p>Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
+
+                Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and recover without requiring special treatment. Older people, and those with underlying medical problems like cardiovascular disease,
+                diabetes, chronic respiratory disease, and cancer are more likely to develop serious illness.</p>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="titles">
+            <p>Notifications & advisories</p>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <tbody class="notifications_section">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/task_2.js' %}"></script>
+</body>
+
+</html>

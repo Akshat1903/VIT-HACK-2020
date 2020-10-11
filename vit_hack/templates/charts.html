@@ -1,0 +1,115 @@
+ <!DOCTYPE html>
+ {% load static %}
+ <html lang="en" dir="ltr">
+
+ <head>
+     <meta charset="utf-8">
+     <title>Chart</title>
+     <link rel="stylesheet" href="{% static 'css/charts.css' %}">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js"></script>
+     <script src="https://smtpjs.com/v3/smtp.js"></script>
+ </head>
+
+ <body>
+     <nav>
+         <label class="logo"> <a href="{% url 'api:home_page' %}">Covinfo</a> </label>
+         <ul class="nav-links">
+             <li><a href="{% url 'api:hospitals' %}">
+                     <p>Hospitals</p>
+                 </a></li>
+             <li><a href="{% url 'api:colleges' %}">
+                     <p>Medical Colleges</p>
+                 </a></li>
+             <li><a href="{% url 'api:charts' %}">
+                     <p>Charts</p>
+                 </a></li>
+             <li><a href="{% url 'api:contact_view' %}">
+                     <p>Contact info</p>
+                 </a></li>
+         </ul>
+         <div class="burger">
+             <div class="line1"></div>
+             <div class="line2"></div>
+             <div class="line3"></div>
+         </div>
+     </nav>
+
+     <div class="main-body">
+         <div class="container">
+             <h2>Chart.js Responsive Line Chart Demo</h2>
+             <div>
+                 <canvas id="canvas"></canvas>
+             </div>
+         </div>
+
+         <div class="">
+             <select class="form-control" name="gender" id="gender">
+                 <option value="male">Male</option>
+                 <option value="female">Female</option>
+                 <option value="">NA</option>
+             </select>
+         </div>
+         <div class="">
+             <select class="form-control" name="age" id="age">
+                 <option value="">All</option>
+                 <option value="0">0-9</option>
+                 <option value="1">10-19</option>
+                 <option value="2">20-29</option>
+                 <option value="3">30-39</option>
+                 <option value="4">40-49</option>
+                 <option value="5">50-59</option>
+                 <option value="6">60-69</option>
+                 <option value="7">70 and above</option>
+             </select>
+         </div>
+         <div class="">
+             <select class="form-control" name="state" id="state">
+                 <option value="">All States</option>
+                 <option value="Assam">Assam</option>
+                 <option value="West Bengal">West Bengal</option>
+                 <option value="Rajasthan">Rajasthan</option>
+                 <option value="Odisha">Odisha</option>
+                 <option value="Himachal Pradesh">Himachal Pradesh</option>
+                 <option value="Meghalaya">Meghalaya</option>
+                 <option value="Mizoram">Mizoram</option>
+                 <option value="Punjab">Punjab</option>
+                 <option value="Kerala">Kerala</option>
+                 <option value="Uttar Pradesh">Uttar Pradesh</option>
+                 <option value="Maharastra">Maharastra</option>
+                 <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                 <option value="Delhi">Delhi</option>
+                 <option value="Bihar">Bihar</option>
+                 <option value="Goa">Goa</option>
+                 <option value="Andaman and Nicobar Islands">A & N Islands</option>
+                 <option value="Telangana">Telangana</option>
+                 <option value="Jammu and Kashmir">Jammu & Kashmir</option>
+                 <option value="Chandigarh">Chandigarh</option>
+                 <option value="Chattisgarh">Chattisgarh</option>
+                 <option value="Andhra Pradesh">Andhra Pradesh</option>
+                 <option value="Puducherry">Puducherry</option>
+                 <option value="Uttarakhand">Uttarakhand</option>
+                 <option value="Jharkhand">Jharkhand</option>
+                 <option value="Haryana">Haryana</option>
+                 <option value="Tripura">Tripura</option>
+                 <option value="Gujarat">Gujarat</option>
+                 <option value="Madhya Pradesh">Madhya Pradesh</option>
+                 <option value="Manipur">Manipur</option>
+                 <option value="Tamil Nadu">Tamil Nadu</option>
+                 <option value="Karnataka">Karnataka</option>
+                 <option value="Ladakh">Ladakh</option>
+             </select>
+         </div>
+         <div class="">
+             <input type="date" name="from_date" value="" id="from_date">
+             <input type="date" name="to_date" value="" id="to_date">
+         </div>
+
+         <a href="#" id="downloadPdf">Download Report Page as PDF</a>
+     </div>
+     <script src="{% static 'js/index.js' %}"></script>
+     <script src="{% static 'js/charts.js' %}"></script>
+ </body>
+
+ </html>
