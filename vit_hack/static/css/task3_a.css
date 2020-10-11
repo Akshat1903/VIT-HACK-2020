@@ -6,6 +6,7 @@
 
 body {
     background-color: #eee;
+    font-family: 'Josefin Sans', sans-serif !important;
 }
 
 nav {
@@ -165,31 +166,58 @@ nav ul li a:hover {
         display: block;
     }
 }
-.statecard {
-    text-align: center;
-    padding: 20px;
-    margin: auto;
-    margin-top: 20px;
-    border: 0.5px solid lightgrey;
-    border-radius: 1.2rem;
+.statecard{
+  text-align: center;
+  padding: 20px;
+  margin: auto;
+  margin-top: 20px;
+  border: 0.5px solid lightgrey;
+  border-radius: 1.2rem;
 }
 
-.statename {
-    height: 50px;
-    margin-bottom: 20px;
+.statename{
+  height: 50px;
+  margin-bottom: 20px;
 }
 
-.statedata {
+.statedata{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.summary_table{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+table{
+  width: 100%;
+}
+
+td{
+  padding: 10px;
+}
+
+.titles {
     align-items: center;
-    justify-content: center;
     text-align: center;
-    width: 100%;
+    justify-content: center;
+    margin: 50px 0px;
 }
 
-table {
-    width: 100%;
+.titles p {
+    display: inline-block;
+    margin: auto;
+    padding: 10px 20px;
+    border-bottom: 5px solid lightblue;
+    font-size: 40px;
 }
 
-td {
-    padding: 10px;
+.sources{
+  text-align: center;
+  margin: 30px 0px;
 }

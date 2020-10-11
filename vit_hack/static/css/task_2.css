@@ -4,6 +4,10 @@
     scroll-behavior: smooth;
 }
 
+body{
+  font-family: 'Josefin Sans', sans-serif !important;
+}
+
 nav {
     background: rgb(48, 50, 52);
     position: fixed;

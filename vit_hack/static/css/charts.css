@@ -6,6 +6,7 @@
 
 body {
     background-color: #eee;
+    font-family: 'Josefin Sans', sans-serif !important;
 }
 
 nav {
@@ -176,4 +177,13 @@ nav ul li a:hover {
   text-align: center;
   font-size: 14px;
   padding-top: 140px;
+}
+
+.graphs{
+  margin: 30px 0px;
+}
+
+h2{
+  margin: 20px;
+  text-align: center;
 }

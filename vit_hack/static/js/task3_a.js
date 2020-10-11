@@ -11,27 +11,43 @@ async function getUsers() {
 async function renderUsers() {
     let users = await getUsers();
     let html = '';
+    let summary_fin = '';
+    let summary = users.data.summary;
+    let sources_fin='';
+    let html_summary = `<div class="summary_table">
+                          <table>
+                            <tr>
+                              <td></td>
+                              <td><b>Hospitals</b></td>
+                              <td><b>Beds</b></td>
+                            </tr>
+                            <tr>
+                              <td><b>Rural</b></td>
+                              <td>${summary.ruralHospitals}</td>
+                              <td>${summary.ruralBeds}</td>
+                            </tr>
+                            <tr>
+                              <td><b>Urban</b></td>
+                              <td>${summary.urbanHospitals}</td>
+                              <td>${summary.urbanBeds}</td>
+                            </tr>
+                            <tr>
+                              <td><b>Total</b></td>
+                              <td>${summary.totalHospitals}</td>
+                              <td>${summary.totalBeds}</td>
+                            </tr>
+                          </table>
+                        </div>`
 
-    // let summary = users.data.summary;
-    // let html_summary = `<div>
-    //                       <ul>
-    //                         <li>Rural hospitals: ${summary.ruralHospitals}</li>
-    //                         <li>Rural Beds: ${summary.ruralBeds}</li>
-    //                         <li>Urban Hospitals: ${summary.urbanHospitals}</li>
-    //                         <li>Urban Beds: ${summary.urbanBeds}</li>
-    //                         <li>TotalHospitals: ${summary.totalHospitals} </li>
-    //                         <li>Total Beds: ${summary.totalBeds}</li>
-    //                       </ul>
-    //                     </div>`;
+    summary_fin += html_summary;
+
+    document.querySelector('.summary_section').innerHTML = summary_fin;
     //
-    // html += html_summary;
-    //
-    // let sources = users.data.sources
-    // let html_sources = `<div>
-    //                       <a href="${sources[0].url}">Sources</a>
-    //                     </div>`
-    //
-    // html += html_sources;
+    let sources = users.data.sources
+    let html_sources = `<a href="${sources[0].url}">Sources</a> last updated on ${sources[0].lastUpdated}`;
+
+    sources_fin += html_sources;
+    document.querySelector('.sources').innerHTML = sources_fin;
 
     let regional = users.data.regional;
     regional.forEach(x => {
